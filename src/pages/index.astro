@@ -1,0 +1,17 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';  // Imports the layout we just made
+---
+<MainLayout title="Home">
+  <section class="hero min-h-screen flex items-center justify-center text-center bg-gradient-to-b from-background to-accent/10">
+    <div class="container mx-auto px-6">
+      <h1 class="text-6xl font-bold mb-4 highlight">Aryan Agarwal</h1>  <!-- Aura with underline -->
+      <p class="text-2xl text-muted max-w-2xl mx-auto">Hi, I'm Aryan Agarwal, 3rd Year Data Science @UCSD </p>
+      <a href="/projects" class="mt-8 inline-block bg-primary text-background px-8 py-3 rounded hover:bg-primary/80 transition">View Projects</a>
+    </div>
+  </section>
+  <section class="bio container mx-auto px-6 py-16">
+    <h2 class="text-4xl font-bold mb-8 text-center">About Me</h2>
+    <p class="text-lg text-muted max-w-3xl mx-auto text-center">Data Science student @ UCSD interested in pursuing a career in cloud engineering and AI solutions <span class="highlight"> <br> Prev Cloud Data Engineering @ Ally Financial</span>. <span class="highlight"> <br> Incoming SWE @IBM</span>.</p>
+    <div class="divider"></div>  <!-- Subtle gray line -->
+  </section>
+</MainLayout>

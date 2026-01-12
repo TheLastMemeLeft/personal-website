@@ -1,0 +1,22 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+const projects = [  // Add your real projects here
+  { title: 'MyCloud', desc: 'Cloud Based Self Storage Service.', link: 'https://github.com/TheLastMemeLeft/mycloud-mvp.git' },
+    { title: 'TruReview', desc: 'AI Powered Amazon Seller Insights .', link: 'https://github.com/TheLastMemeLeft/TruReview' },
+
+];
+---
+<MainLayout title="Projects">
+  <section class="py-16 container mx-auto px-6">
+    <h1 class="text-5xl font-bold mb-12 text-center">My Projects</h1>
+    <div class="grid md:grid-cols-2 gap-8">
+      {projects.map((proj) => (
+        <div class="bg-accent/10 p-6 rounded-lg border border-accent hover:shadow-lg transition">
+          <h2 class="text-3xl font-bold mb-4">{proj.title}</h2>
+          <p class="text-muted mb-4">{proj.desc}</p>
+          <a href={proj.link} class="text-primary hover:underline">Learn More</a>
+        </div>
+      ))}
+    </div>
+  </section>
+</MainLayout>

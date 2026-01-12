@@ -1,0 +1,160 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/700.css';
+
+@config '../../tailwind.config.mjs';
+
+@import "tailwindcss";
+
+@layer base {
+  html {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  body {
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    @apply antialiased;
+  }
+}
+
+/* Your custom utilities (use @utility instead of @layer components for v4) */
+@utility divider {
+  border-top: 1px solid var(--color-accent);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+@utility highlight {
+  border-bottom: 1px solid var(--color-muted);
+  padding-bottom: 0.25rem;
+}
+
+.starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.starfield::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle 1px at 3% 8%, #f5f5f5 1px, transparent 3px),
+    radial-gradient(circle 1.2px at 9% 22%, #e8e8e8 1px, transparent 3px),
+    radial-gradient(circle 0.9px at 14% 38%, #ffffff 0.8px, transparent 2.5px),
+    radial-gradient(circle 1.1px at 21% 55%, #f0f0f0 1px, transparent 3px),
+    radial-gradient(circle 1px at 27% 12%, #e0e0e0 1px, transparent 3px),
+    radial-gradient(circle 1.3px at 33% 75%, #ffffff 1.1px, transparent 3.5px),
+    radial-gradient(circle 0.8px at 39% 30%, #f5f5f5 0.8px, transparent 2.5px),
+    radial-gradient(circle 1.2px at 48% 68%, #e8e8e8 1px, transparent 3px),
+    radial-gradient(circle 1px at 56% 18%, #ffffff 1px, transparent 3px),
+    radial-gradient(circle 1.4px at 62% 45%, #f0f0f0 1.2px, transparent 3.5px),
+    radial-gradient(circle 0.9px at 71% 82%, #e0e0e0 0.9px, transparent 2.8px),
+    radial-gradient(circle 1.1px at 79% 65%, #ffffff 1px, transparent 3px),
+    radial-gradient(circle 1px at 88% 35%, #f5f5f5 1px, transparent 3px),
+    radial-gradient(circle 1.2px at 95% 92%, #e8e8e8 1px, transparent 3px),
+    radial-gradient(circle 0.8px at 4% 68%, #ffffff 0.8px, transparent 2.5px),
+    radial-gradient(circle 1px at 16% 48%, #f0f0f0 1px, transparent 3px),
+    radial-gradient(circle 1.3px at 52% 85%, #e0e0e0 1.1px, transparent 3.5px),
+    radial-gradient(circle 0.9px at 68% 28%, #ffffff 0.9px, transparent 2.8px),
+    radial-gradient(circle 1.1px at 84% 72%, #f5f5f5 1px, transparent 3px),
+    radial-gradient(circle 1.2px at 96% 14%, #e8e8e8 1px, transparent 3px),
+    radial-gradient(circle 1px at 24% 58%, #ffffff 1px, transparent 3px),
+    radial-gradient(circle 0.8px at 44% 92%, #f0f0f0 0.8px, transparent 2.5px),
+    radial-gradient(circle 1.4px at 64% 36%, #e0e0e0 1.2px, transparent 3.5px),
+    radial-gradient(circle 1px at 76% 80%, #ffffff 1px, transparent 3px),
+    radial-gradient(circle 1.1px at 92% 24%, #f5f5f5 1px, transparent 3px),
+    radial-gradient(circle 0.9px at 12% 76%, #e8e8e8 0.9px, transparent 2.8px),
+    radial-gradient(circle 1.2px at 32% 42%, #ffffff 1px, transparent 3px);
+  background-size: 1400px 1400px;
+  opacity: 0.7;
+  animation: twinkle-dense 9s infinite alternate ease-in-out;
+}
+
+.starfield::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle 2px at 18% 28%, #ffffff 1.8px, transparent 5px),
+    radial-gradient(circle 2.3px at 42% 52%, #f0f0f0 2px, transparent 5.5px),
+    radial-gradient(circle 1.8px at 58% 12%, #e8e8e8 1.7px, transparent 4.5px),
+    radial-gradient(circle 2.5px at 72% 78%, #ffffff 2.2px, transparent 6px),
+    radial-gradient(circle 2px at 8% 62%, #f5f5f5 1.9px, transparent 5px),
+    radial-gradient(circle 2.2px at 85% 38%, #e0e0e0 2px, transparent 5.5px),
+    radial-gradient(circle 1.9px at 32% 88%, #ffffff 1.8px, transparent 4.8px),
+    radial-gradient(circle 2.1px at 48% 20%, #f0f0f0 2px, transparent 5px),
+    radial-gradient(circle 2.4px at 64% 70%, #e8e8e8 2.1px, transparent 5.8px),
+    radial-gradient(circle 1.8px at 80% 45%, #ffffff 1.7px, transparent 4.5px),
+    radial-gradient(circle 2.5px at 96% 82%, #f5f5f5 2.2px, transparent 6px),
+    radial-gradient(circle 2px at 24% 10%, #e0e0e0 1.9px, transparent 5px),
+    radial-gradient(circle 2.2px at 40% 60%, #ffffff 2px, transparent 5.5px),
+    radial-gradient(circle 1.9px at 56% 90%, #f0f0f0 1.8px, transparent 4.8px),
+    radial-gradient(circle 2.3px at 72% 30%, #e8e8e8 2px, transparent 5.5px);
+  background-size: 1600px 1600px;
+  opacity: 0.5;
+  animation: twinkle-medium 14s infinite alternate ease-in-out;
+}
+
+.starfield .big-star {
+  position: absolute;
+  filter: blur(0.5px);
+  opacity: 0.4;
+  animation: twinkle-big 12s infinite alternate ease-in-out;
+}
+
+.starfield .big-star::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: conic-gradient(from 0deg, transparent 0 45deg, rgba(255,255,255,0.8) 45deg 135deg, transparent 135deg 225deg, rgba(255,255,255,0.8) 225deg 315deg, transparent 315deg);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+.starfield .big-star::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: radial-gradient(circle, #ffffff 10%, rgba(255,255,255,0.7) 30%, transparent 70%);
+  border-radius: 50%;
+}
+
+.starfield .big-1 { top: 18%; left: 22%; width: 24px; height: 24px; animation-duration: 10s; }
+.starfield .big-1::before { width: 36px; height: 36px; }
+.starfield .big-1::after { width: 24px; height: 24px; }
+
+.starfield .big-2 { top: 65%; left: 78%; width: 32px; height: 32px; animation-duration: 13s; opacity: 0.45; }
+.starfield .big-2::before { width: 48px; height: 48px; }
+.starfield .big-2::after { width: 32px; height: 32px; }
+
+.starfield .big-3 { top: 45%; left: 55%; width: 28px; height: 28px; animation-duration: 15s; }
+.starfield .big-3::before { width: 42px; height: 42px; }
+.starfield .big-3::after { width: 28px; height: 28px; }
+
+.starfield .big-4 { top: 82%; left: 15%; width: 36px; height: 36px; animation-duration: 11s; opacity: 0.5; }
+.starfield .big-4::before { width: 54px; height: 54px; }
+.starfield .big-4::after { width: 36px; height: 36px; }
+
+@keyframes twinkle-dense {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@keyframes twinkle-medium {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.85; }
+}
+
+@keyframes twinkle-big {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.15); }
+}
